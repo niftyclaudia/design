@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "name": "AI Agent + Builder Experience",
+    "goal": "Guide an AI to recreate a cohesive marketing + product preview site inspired by the provided references.",
+    "keywords": [
+      "premium SaaS",
+      "trustworthy AI",
+      "gradient hero",
+      "dashboard preview"
+    ]
+  },
+  "foundations": {
+    "designStyle": {
+      "mood": "Calm, confident, modern—mix of soft gradients and high-contrast dark panels.",
+      "voice": "Expert yet approachable; keep copy short and instructive.",
+      "imagery": "Edge-to-edge gradients for marketing heroes, clean mock dashboards with white surfaces and muted borders."
+    },
+    "gridAndSpacing": {
+      "baseUnit": 8,
+      "layout": "12-column responsive grid with generous gutters (24px desktop, 16px tablet, 8px mobile).",
+      "sectionSpacing": {
+        "hero": 160,
+        "standard": 112,
+        "dense": 72
+      },
+      "cardPadding": {
+        "xl": "48px 56px",
+        "md": "32px 40px",
+        "sm": "20px 24px"
+      },
+      "borderRadius": {
+        "pill": 999,
+        "card": 28,
+        "chip": 999
+      },
+      "dividerStyle": "1px solid #E5E8EF with 32px breathing room."
+    },
+    "typography": {
+      "primary": {
+        "family": "Space Grotesk",
+        "weights": [400, 500, 600],
+        "usage": "Headlines, hero input prompts, CTA labels."
+      },
+      "secondary": {
+        "family": "Inter",
+        "weights": [400, 500],
+        "usage": "Body copy, button descriptions, card annotations."
+      },
+      "monospace": {
+        "family": "IBM Plex Mono",
+        "weights": [400],
+        "usage": "Metric labels, inline command hints."
+      },
+      "typeScale": {
+        "hero": { "size": 72, "lineHeight": 1.05, "tracking": -1 },
+        "h2": { "size": 48, "lineHeight": 1.1 },
+        "h3": { "size": 32, "lineHeight": 1.2 },
+        "bodyLg": { "size": 20, "lineHeight": 1.6 },
+        "body": { "size": 18, "lineHeight": 1.65 },
+        "caption": { "size": 14, "lineHeight": 1.5, "letterSpacing": 0.2 }
+      }
+    },
+    "colors": {
+      "backgrounds": {
+        "heroLight": ["#DDF0FF", "#FFE2C4"],
+        "heroDark": ["#070D1A", "#121C2F"],
+        "surface": "#FFFFFF",
+        "surfaceMuted": "#F6F7FB"
+      },
+      "neutrals": {
+        "textPrimary": "#0F172A",
+        "textSecondary": "#4C5673",
+        "border": "#E1E5EF",
+        "shadow": "rgba(9, 18, 41, 0.08)"
+      },
+      "accents": {
+        "highlight": "#C8FF5A",
+        "cta": "#FF6B35",
+        "ctaHover": "#F15520",
+        "chipLavender": "#ECE7FF",
+        "chipAqua": "#D7F8F2",
+        "chipCoral": "#FFE4D7"
+      },
+      "dataViz": {
+        "seriesA": "#4C6FFF",
+        "seriesB": "#FF67B0",
+        "seriesC": "#20C9A8",
+        "seriesD": "#FCCD4D"
+      },
+      "usageNotes": [
+        "Use the light gradient hero for marketing sections; reserve the dark gradient for AI agent callouts.",
+        "Always pair #FF6B35 CTA with white text and soft drop shadow (0 8px 20px rgba(255,107,53,0.35)).",
+        "Suggestion chips should have low-contrast pastel fills with darker text (#2D2D2D)."
+      ]
+    }
+  },
+  "layoutSystem": {
+    "hero": {
+      "pattern": "Full-bleed gradient background, centered stack, single oversized input card.",
+      "elements": [
+        "Top nav with pill CTA on the right and globe language icon.",
+        "Headline split across two lines; emphasize one keyword with accent color or lighter weight.",
+        "Voice-to-text inspired input surface (white, 8px shadow, arrow send button).",
+        "Row of suggestion chips underneath with icons."
+      ]
+    },
+    "contentSections": [
+      {
+        "name": "Workflow Cards",
+        "structure": "3-up responsive cards showcasing step-by-step tasks.",
+        "visuals": "Rounded rectangles with subtle inner shadows and checkmark lists."
+      },
+      {
+        "name": "Agent Builder CTA",
+        "structure": "Split layout: copy on left (dark surface) and stat blocks on right.",
+        "visuals": "Use highlight green for metric deltas; include small avatar or handshake photo for trust signals."
+      },
+      {
+        "name": "Dashboard Showcase",
+        "structure": "Overlapping product screenshots with drop shadows and light border frames.",
+        "visuals": "Stack 2–3 dashboard panels with slight rotation to imply depth."
+      }
+    ],
+    "ctaBar": {
+      "style": "Dark pill bar (#0B1324) with twin buttons (primary filled, secondary outlined).",
+      "height": 64,
+      "padding": "12px 24px"
+    }
+  },
+  "components": {
+    "navigation": {
+      "height": 72,
+      "content": "Logo left, product/use-case/resources dropdowns center, CTA + language switch right.",
+      "background": "Translucent white (#FFFFFFEE) over hero with 1px border bottom.",
+      "hover": "Underline animation from center outwards."
+    },
+    "heroInput": {
+      "size": "640px width on desktop, 100% on mobile.",
+      "fields": "Single textarea style with placeholder prompt and send arrow button (#FF6B35).",
+      "shadow": "0 32px 80px rgba(9, 18, 41, 0.15)."
+    },
+    "chips": {
+      "padding": "10px 18px",
+      "icon": "16px glyph to left, subtle drop shadow.",
+      "font": "Inter 16px 500"
+    },
+    "cards": {
+      "workflow": "White surface, 1px #EDF0F7 border, top badge using accent pastel, check list with green ticks.",
+      "testimonial": "Muted beige background (#F4EDE1), serif quote highlight optional."
+    },
+    "dashboardPanels": {
+      "frame": "#FFFFFF with 1px border + 24px radius.",
+      "toolbar": "Light grey (#F9FAFC) top strip with icons, status badge on right.",
+      "charts": "Line chart uses seriesA, bar chart uses seriesB and neutrals, tables use zebra striping (#F6F7FB)."
+    },
+    "buttons": {
+      "primary": {
+        "fill": "#FF6B35",
+        "text": "#FFFFFF",
+        "shadow": "0 12px 24px rgba(255,107,53,0.35)",
+        "hover": "#F15520"
+      },
+      "secondary": {
+        "border": "1px solid rgba(255,255,255,0.4) or #0F172A on light backgrounds",
+        "text": "#0F172A",
+        "background": "transparent"
+      }
+    }
+  },
+  "motionAndEffects": {
+    "hover": "Scale cards by 1.01 with soft shadow transition (200ms).",
+    "chips": "Slight upward lift (translateY(-2px)) on hover.",
+    "heroGradient": "Slow 8s background pan for subtle liveliness.",
+    "dashboard": "Reveal animations from bottom with 250ms delay stagger."
+  },
+  "usageExamples": {
+    "pageFlow": [
+      "Hero gradient intro with prompt input and quick ideas chips.",
+      "3-step workflow explanation cards (Design, Validate, Deploy).",
+      "Agent builder dark section highlighting reliability stats.",
+      "Testimonials + partnership logos row.",
+      "Dashboard collage + KPI cards for proof.",
+      "Bottom CTA pill with dual actions (Book a demo / Explore AI Agents)."
+    ],
+    "spacingNotes": [
+      "Align cards to grid; never bleed them into hero gradient.",
+      "Maintain 48px between stacked sections unless noted.",
+      "Keep nav and CTA pill aligned with hero input edges."
+    ]
+  }
+}
