@@ -1,0 +1,755 @@
+{
+  "meta": {
+    "name": "Mopac Design System",
+    "version": "1.0.0",
+    "description": "Comprehensive design system for Mopac AI agent platform. This file serves as a complete reference for AI agents building new features.",
+    "lastUpdated": "2024-12-19"
+  },
+  "designPrinciples": {
+    "philosophy": "Calm, confident, modern—mix of soft gradients and high-contrast dark panels. Expert yet approachable voice.",
+    "coreValues": [
+      "Trustworthy and reliable",
+      "Modern and professional",
+      "Accessible and clear",
+      "Consistent and scalable"
+    ],
+    "usageGuidelines": [
+      "Always use design tokens from this system—never hardcode colors or spacing",
+      "Maintain consistent spacing using the 8px base unit",
+      "Use semantic color names (brand, ink, slate) not hex values",
+      "Follow typography scale for hierarchy",
+      "Apply consistent border radius values",
+      "Use shadows to create depth hierarchy"
+    ]
+  },
+  "typography": {
+    "fontFamilies": {
+      "display": {
+        "family": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        "usage": "Headlines, hero text, section titles, card titles",
+        "weights": [400, 500, 600, 700],
+        "css": "font-display"
+      },
+      "body": {
+        "family": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        "usage": "Body copy, descriptions, general text",
+        "weights": [300, 400, 500, 600],
+        "css": "font-body"
+      },
+      "mono": {
+        "family": ["IBM Plex Mono", "Menlo", "Monaco", "monospace"],
+        "usage": "Labels, metrics, code snippets, technical text",
+        "weights": [400],
+        "css": "font-mono"
+      }
+    },
+    "typeScale": {
+      "hero": {
+        "size": "clamp(2.5rem, 5vw, 4.5rem)",
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.03em",
+        "fontWeight": 600,
+        "usage": "Main hero headline on landing page",
+        "css": "text-hero",
+        "component": "Hero"
+      },
+      "h1": {
+        "size": "clamp(2rem, 4vw, 3.5rem)",
+        "lineHeight": 1.15,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 600,
+        "usage": "Page titles, major section headers",
+        "css": "text-h1",
+        "component": "H1"
+      },
+      "h2": {
+        "size": "clamp(1.75rem, 3vw, 2.75rem)",
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 600,
+        "usage": "Section headers, card group titles",
+        "css": "text-h2",
+        "component": "H2"
+      },
+      "h3": {
+        "size": "clamp(1.5rem, 2.5vw, 2rem)",
+        "lineHeight": 1.3,
+        "letterSpacing": "-0.01em",
+        "fontWeight": 600,
+        "usage": "Card titles, subsection headers",
+        "css": "text-h3",
+        "component": "H3"
+      },
+      "body-lg": {
+        "size": "1.25rem",
+        "lineHeight": 1.7,
+        "letterSpacing": "-0.01em",
+        "fontWeight": 300,
+        "usage": "Large body text, hero descriptions, important paragraphs",
+        "css": "text-body-lg",
+        "component": "BodyLarge"
+      },
+      "body": {
+        "size": "1.125rem",
+        "lineHeight": 1.7,
+        "letterSpacing": "-0.01em",
+        "fontWeight": 400,
+        "usage": "Standard body text, card descriptions",
+        "css": "text-body",
+        "component": "Body"
+      },
+      "body-sm": {
+        "size": "1rem",
+        "lineHeight": 1.6,
+        "letterSpacing": "-0.005em",
+        "fontWeight": 400,
+        "usage": "Small body text, captions, metadata",
+        "css": "text-body-sm",
+        "component": "BodySmall"
+      },
+      "caption": {
+        "size": "0.875rem",
+        "lineHeight": 1.5,
+        "letterSpacing": "0.01em",
+        "fontWeight": 400,
+        "usage": "Fine print, disclaimers, timestamps",
+        "css": "text-caption",
+        "component": "Caption"
+      },
+      "label": {
+        "size": "0.75rem",
+        "lineHeight": 1.5,
+        "letterSpacing": "0.2em",
+        "fontWeight": 500,
+        "textTransform": "uppercase",
+        "fontFamily": "mono",
+        "usage": "Section labels, category tags, metadata labels",
+        "css": "font-mono text-xs uppercase tracking-[0.2em] font-medium",
+        "component": "Label"
+      }
+    },
+    "fontSettings": {
+      "textRendering": "optimizeLegibility",
+      "fontSmoothing": "antialiased",
+      "fontSynthesis": "none",
+      "fontFeatureSettings": "'kern' 1, 'liga' 1"
+    }
+  },
+  "colors": {
+    "semantic": {
+      "surface": {
+        "value": "#FFFFFF",
+        "usage": "Primary background, card backgrounds, main content areas",
+        "css": "bg-surface"
+      },
+      "surface-muted": {
+        "value": "#FAFBFC",
+        "usage": "Secondary backgrounds, nested cards, subtle sections",
+        "css": "bg-surface-muted"
+      },
+      "ink": {
+        "value": "#0F172A",
+        "usage": "Primary text color, dark text on light backgrounds",
+        "css": "text-ink"
+      },
+      "slate": {
+        "value": "#64748B",
+        "usage": "Secondary text, muted text, metadata",
+        "css": "text-slate",
+        "opacityVariants": {
+          "80": "text-slate/80",
+          "70": "text-slate/70",
+          "60": "text-slate/60"
+        }
+      },
+      "border": {
+        "value": "#E2E8F0",
+        "usage": "Card borders, dividers, input borders",
+        "css": "border-border",
+        "opacityVariants": {
+          "60": "border-border/60"
+        }
+      },
+      "brand": {
+        "value": "#FF6B35",
+        "usage": "Primary brand color, CTAs, accents, interactive elements",
+        "css": "bg-brand or text-brand"
+      },
+      "brand-hover": {
+        "value": "#F15520",
+        "usage": "Hover state for brand-colored buttons and links",
+        "css": "bg-brand-hover"
+      },
+      "highlight": {
+        "value": "#C8FF5A",
+        "usage": "Highlight color, success states, positive metrics",
+        "css": "bg-highlight"
+      },
+      "night": {
+        "value": "#0A0F1C",
+        "usage": "Dark section backgrounds, premium sections",
+        "css": "bg-night"
+      },
+      "midnight": {
+        "value": "#0F172A",
+        "usage": "Darkest backgrounds, footer sections",
+        "css": "bg-midnight"
+      }
+    },
+    "dataVisualization": {
+      "seriesA": {
+        "value": "#4C6FFF",
+        "usage": "Primary chart color, first data series",
+        "css": "text-[#4C6FFF]"
+      },
+      "seriesB": {
+        "value": "#FF67B0",
+        "usage": "Secondary chart color, second data series"
+      },
+      "seriesC": {
+        "value": "#20C9A8",
+        "usage": "Tertiary chart color, success metrics, positive indicators",
+        "css": "text-[#20C9A8]"
+      },
+      "seriesD": {
+        "value": "#FCCD4D",
+        "usage": "Quaternary chart color, warning states"
+      }
+    },
+    "gradients": {
+      "hero-gradient": {
+        "value": "linear-gradient(180deg, #FFFFFF 0%, #FFE2C4 100%)",
+        "usage": "Hero section background, landing page header",
+        "css": "bg-hero-gradient"
+      },
+      "text-gradient": {
+        "value": "linear-gradient(to right, #0F172A, #FF6B35)",
+        "usage": "Gradient text effects, hero text highlights",
+        "css": "bg-gradient-to-r from-ink to-brand bg-clip-text text-transparent"
+      }
+    },
+    "usageRules": {
+      "textOnLight": "Use 'ink' for primary text, 'slate' with opacity for secondary",
+      "textOnDark": "Use 'text-white' with opacity variants (text-white/80, text-white/60)",
+      "borders": "Use 'border-border' or 'border-border/60' for subtle borders",
+      "brandUsage": "Reserve brand color for CTAs, active states, and key interactive elements",
+      "contrast": "Ensure WCAG AA contrast ratios: 4.5:1 for body text, 3:1 for large text"
+    }
+  },
+  "spacing": {
+    "baseUnit": 8,
+    "scale": {
+      "0": "0px",
+      "0.5": "0.125rem",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "8": "2rem",
+      "10": "2.5rem",
+      "12": "3rem",
+      "16": "4rem",
+      "18": "4.5rem",
+      "20": "5rem",
+      "22": "5.5rem",
+      "24": "6rem",
+      "26": "6.5rem",
+      "30": "7.5rem"
+    },
+    "sectionSpacing": {
+      "hero": "160px (mt-20)",
+      "standard": "112px (py-24)",
+      "dense": "72px (py-18)",
+      "compact": "48px (py-12)"
+    },
+    "componentSpacing": {
+      "cardPadding": {
+        "sm": "20px 24px (p-5)",
+        "md": "32px (p-8)",
+        "lg": "48px (p-12)"
+      },
+      "buttonPadding": {
+        "sm": "10px 20px (px-5 py-2.5)",
+        "md": "24px 24px (px-6 py-3)",
+        "lg": "32px 32px (px-8 py-4)"
+      },
+      "tagPadding": "10px 20px (px-5 py-2.5)"
+    }
+  },
+  "borderRadius": {
+    "pill": {
+      "value": "999px",
+      "usage": "Buttons, tags, chips, fully rounded elements",
+      "css": "rounded-full"
+    },
+    "card": {
+      "value": "28px",
+      "usage": "Cards, containers, main content blocks",
+      "css": "rounded-[28px]"
+    },
+    "card-xl": {
+      "value": "32px",
+      "usage": "Large cards, hero input containers",
+      "css": "rounded-[32px]"
+    },
+    "badge": {
+      "value": "16px",
+      "usage": "Icon badges, small containers",
+      "css": "rounded-2xl"
+    },
+    "badge-sm": {
+      "value": "12px",
+      "usage": "Small icon containers",
+      "css": "rounded-xl"
+    }
+  },
+  "shadows": {
+    "hero": {
+      "value": "0 24px 64px rgba(9, 18, 41, 0.12)",
+      "usage": "Hero input cards, prominent elevated elements",
+      "css": "shadow-hero"
+    },
+    "card": {
+      "value": "0 16px 48px rgba(9, 18, 41, 0.06)",
+      "usage": "Standard cards, elevated content",
+      "css": "shadow-card"
+    },
+    "cta": {
+      "value": "0 8px 24px rgba(255, 107, 53, 0.28)",
+      "usage": "Primary buttons, brand-colored CTAs",
+      "css": "shadow-cta"
+    }
+  },
+  "components": {
+    "button": {
+      "variants": {
+        "primary": {
+          "background": "#FF6B35",
+          "text": "#FFFFFF",
+          "shadow": "shadow-cta",
+          "hover": {
+            "background": "#F15520",
+            "transform": "none"
+          },
+          "padding": "px-6 py-3",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Main CTAs, primary actions",
+          "component": "Button variant='primary'"
+        },
+        "secondary": {
+          "background": "transparent",
+          "border": "1px solid rgba(255, 255, 255, 0.3)",
+          "text": "rgba(255, 255, 255, 0.8)",
+          "hover": {
+            "border": "rgba(255, 255, 255, 0.5)",
+            "background": "rgba(255, 255, 255, 0.05)"
+          },
+          "padding": "px-6 py-3",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Secondary actions on dark backgrounds",
+          "component": "Button variant='secondary'"
+        },
+        "ghost": {
+          "background": "rgba(255, 255, 255, 0.15)",
+          "border": "1px solid rgba(255, 255, 255, 0.5)",
+          "text": "#0F172A",
+          "backdrop": "backdrop-blur-sm",
+          "hover": {
+            "background": "rgba(255, 255, 255, 0.25)"
+          },
+          "padding": "px-5 py-2.5",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Tertiary actions, navigation buttons",
+          "component": "Button variant='ghost'"
+        },
+        "outline": {
+          "background": "transparent",
+          "border": "1px solid #E2E8F0",
+          "text": "#0F172A",
+          "hover": {
+            "background": "#FAFBFC"
+          },
+          "padding": "px-5 py-2",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Secondary actions on light backgrounds",
+          "component": "Button variant='outline'"
+        },
+        "highlight": {
+          "background": "#8B5CF6",
+          "text": "#FFFFFF",
+          "hover": {
+            "background": "rgba(139, 92, 246, 0.9)"
+          },
+          "padding": "px-6 py-3",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Special actions, success states",
+          "component": "Button variant='highlight'"
+        }
+      },
+      "sizes": {
+        "sm": {
+          "padding": "px-5 py-2.5",
+          "fontSize": "text-body-sm",
+          "iconSize": "h-4 w-4"
+        },
+        "md": {
+          "padding": "px-6 py-3",
+          "fontSize": "text-body-sm",
+          "iconSize": "h-4 w-4"
+        },
+        "lg": {
+          "padding": "px-8 py-4",
+          "fontSize": "text-body",
+          "iconSize": "h-5 w-5"
+        }
+      },
+      "iconPlacement": {
+        "left": "Icon before text",
+        "right": "Icon after text (default)"
+      }
+    },
+    "tag": {
+      "variants": {
+        "default": {
+          "background": "#FFFFFF",
+          "text": "#0F172A",
+          "shadow": "shadow-card",
+          "hover": {
+            "transform": "translateY(-2px)",
+            "shadow": "shadow-card"
+          },
+          "padding": "px-5 py-2.5",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-medium",
+          "usage": "Suggestion chips, interactive tags",
+          "component": "Tag variant='default'"
+        },
+        "muted": {
+          "background": "#FAFBFC",
+          "text": "#0F172A",
+          "padding": "px-4 py-2.5",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-light",
+          "usage": "List items, non-interactive tags",
+          "component": "Tag variant='muted'"
+        },
+        "bordered": {
+          "background": "transparent",
+          "border": "1px solid #E2E8F0",
+          "text": "#0F172A",
+          "padding": "px-4 py-2.5",
+          "borderRadius": "rounded-2xl",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-light",
+          "usage": "Field labels, category tags",
+          "component": "Tag variant='bordered'"
+        },
+        "elevated": {
+          "background": "#FFFFFF",
+          "text": "#0F172A",
+          "shadow": "shadow-card",
+          "padding": "px-4 py-2.5",
+          "borderRadius": "rounded-full",
+          "fontSize": "text-body-sm",
+          "fontWeight": "font-light",
+          "usage": "Destination tags, highlighted items",
+          "component": "Tag variant='elevated'"
+        }
+      },
+      "icon": {
+        "size": "h-4 w-4",
+        "color": "text-slate/70",
+        "spacing": "gap-2"
+      }
+    },
+    "card": {
+      "variants": {
+        "default": {
+          "background": "#FFFFFF",
+          "border": "1px solid rgba(226, 232, 240, 0.6)",
+          "shadow": "shadow-card",
+          "hover": {
+            "shadow": "shadow-card"
+          },
+          "padding": "p-8",
+          "borderRadius": "rounded-[28px]",
+          "usage": "Standard content cards, workflow cards",
+          "component": "Card variant='default'"
+        },
+        "muted": {
+          "background": "#FAFBFC",
+          "border": "1px solid #E2E8F0",
+          "padding": "p-5",
+          "borderRadius": "rounded-2xl",
+          "usage": "Nested cards, stat containers",
+          "component": "Card variant='muted'"
+        },
+        "dark": {
+          "background": "rgba(255, 255, 255, 0.05)",
+          "border": "1px solid rgba(255, 255, 255, 0.15)",
+          "padding": "p-6",
+          "borderRadius": "rounded-[28px]",
+          "usage": "Cards on dark backgrounds",
+          "component": "Card variant='dark'"
+        },
+        "bordered": {
+          "background": "#FFFFFF",
+          "border": "1px solid rgba(226, 232, 240, 0.6)",
+          "padding": "p-8",
+          "borderRadius": "rounded-[28px]",
+          "usage": "Cards without shadow",
+          "component": "Card variant='bordered'"
+        }
+      },
+      "padding": {
+        "sm": "p-5",
+        "md": "p-8",
+        "lg": "p-12"
+      }
+    },
+    "iconBadge": {
+      "sizes": {
+        "sm": {
+          "size": "h-8 w-8",
+          "borderRadius": "rounded-xl",
+          "iconSize": "h-4 w-4"
+        },
+        "md": {
+          "size": "h-12 w-12",
+          "borderRadius": "rounded-2xl",
+          "iconSize": "h-6 w-6"
+        },
+        "lg": {
+          "size": "h-16 w-16",
+          "borderRadius": "rounded-3xl",
+          "iconSize": "h-8 w-8"
+        }
+      },
+      "variants": {
+        "default": {
+          "background": "#FAFBFC",
+          "color": "#FF6B35",
+          "usage": "Standard icon badges in cards",
+          "component": "IconBadge variant='default'"
+        },
+        "muted": {
+          "background": "#FAFBFC",
+          "color": "rgba(100, 116, 139, 0.7)",
+          "usage": "Secondary icon badges",
+          "component": "IconBadge variant='muted'"
+        },
+        "brand": {
+          "background": "#FF6B35",
+          "color": "#FFFFFF",
+          "usage": "Primary icon badges",
+          "component": "IconBadge variant='brand'"
+        }
+      }
+    },
+    "navigation": {
+      "height": "auto",
+      "background": "transparent (over hero gradient)",
+        "logo": {
+          "size": "text-2xl",
+          "badge": {
+            "size": "h-10 w-10",
+            "background": "rgba(255, 255, 255, 0.7)",
+            "borderRadius": "rounded-full",
+            "text": "#FF6B35",
+            "shadow": "shadow-card"
+          }
+        },
+      "links": {
+        "fontSize": "text-body-sm",
+        "fontWeight": "font-medium",
+        "color": "text-slate/80",
+        "hover": "text-ink",
+        "spacing": "gap-8"
+      },
+      "component": "Navigation"
+    },
+    "statCard": {
+      "variants": {
+        "light": {
+          "background": "#FAFBFC",
+          "labelColor": "text-slate/70",
+          "valueColor": "text-ink",
+          "detailColor": "text-slate/70",
+          "padding": "p-6",
+          "borderRadius": "rounded-2xl",
+          "usage": "Stats on light backgrounds",
+          "component": "StatCard variant='light'"
+        },
+        "dark": {
+          "background": "rgba(255, 255, 255, 0.08)",
+          "labelColor": "text-white/50",
+          "valueColor": "text-white",
+          "detailColor": "text-white/60",
+          "padding": "p-6",
+          "borderRadius": "rounded-2xl",
+          "usage": "Stats on dark backgrounds",
+          "component": "StatCard variant='dark'"
+        }
+      },
+      "typography": {
+        "label": "Label component",
+        "value": "H2 component",
+        "detail": "BodySmall component"
+      }
+    },
+    "kpiCard": {
+      "background": "#FAFBFC",
+      "border": "1px solid rgba(226, 232, 240, 0.6)",
+      "padding": "p-5",
+      "borderRadius": "rounded-2xl",
+      "label": "Label component (text-slate/60)",
+      "value": "H3 component (color varies)",
+      "change": "BodySmall component (text-slate/70)",
+      "component": "KPICard"
+    }
+  },
+  "layout": {
+    "container": {
+      "maxWidth": "1152px (max-w-6xl)",
+      "padding": "24px (px-6)",
+      "margin": "0 auto (mx-auto)"
+    },
+    "grid": {
+      "columns": {
+        "mobile": 1,
+        "tablet": 2,
+        "desktop": 3,
+        "large": 4
+      },
+      "gap": {
+        "sm": "24px (gap-6)",
+        "md": "32px (gap-8)",
+        "lg": "48px (gap-12)"
+      }
+    },
+    "sections": {
+      "hero": {
+        "padding": "pt-10 pb-24",
+        "background": "bg-hero-gradient",
+        "overlay": "Absolute positioned blur gradient for depth"
+      },
+      "standard": {
+        "padding": "py-24",
+        "spacing": "max-w-6xl mx-auto px-6"
+      },
+      "ctaBar": {
+        "background": "#0F172A (bg-midnight)",
+        "padding": "px-10 py-8",
+        "borderRadius": "rounded-full",
+        "shadow": "shadow-card",
+        "layout": "flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
+      }
+    }
+  },
+  "effects": {
+    "transitions": {
+      "default": "transition-all",
+      "duration": "200-300ms",
+      "easing": "ease-in-out"
+    },
+    "hover": {
+      "cards": {
+        "transform": "none (or scale-101)",
+        "shadow": "shadow-card (enhanced)"
+      },
+      "tags": {
+        "transform": "translateY(-2px)",
+        "shadow": "shadow-card"
+      },
+      "buttons": {
+        "background": "Hover state color",
+        "transform": "none"
+      }
+    },
+    "gradients": {
+      "heroBlur": {
+        "position": "absolute inset-x-0 top-20",
+        "size": "h-64 w-[60rem]",
+        "blur": "blur-3xl",
+        "opacity": "opacity-40",
+        "gradient": "from-[#8B5CF6] via-white to-[#FF6B35]"
+      }
+    }
+  },
+  "responsive": {
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    },
+    "patterns": {
+      "navigation": "Hidden on mobile (hidden md:flex)",
+      "grid": "1 column mobile, 2-3 columns desktop",
+      "spacing": "Reduced padding on mobile (px-6 → px-4)"
+    }
+  },
+  "accessibility": {
+    "contrast": {
+      "minimum": "WCAG AA (4.5:1 for body text, 3:1 for large text)",
+      "recommended": "WCAG AAA where possible"
+    },
+    "focus": {
+      "outline": "Browser default or custom focus ring",
+      "visible": "Always ensure focus is visible"
+    },
+    "semantic": {
+      "headings": "Use proper heading hierarchy (h1 → h2 → h3)",
+      "buttons": "Use button elements for interactive actions",
+      "labels": "Always associate labels with form inputs"
+    }
+  },
+  "implementation": {
+    "componentLocation": "app/src/components/",
+    "exports": "All components exported from app/src/components/index.ts",
+    "usage": "Import components: import { Button, Card, Tag } from '@/components'",
+    "styling": "Tailwind CSS with custom design tokens",
+    "configFile": "app/tailwind.config.js"
+  },
+  "examples": {
+    "buttonPrimary": {
+      "code": "<Button variant='primary'>Start building</Button>",
+      "description": "Main CTA button"
+    },
+    "buttonWithIcon": {
+      "code": "<Button variant='ghost' icon={MessageSquare}>Support</Button>",
+      "description": "Button with left icon"
+    },
+    "tagInteractive": {
+      "code": "<Tag icon={LayoutDashboard} onClick={handleClick}>Reporting Dashboard</Tag>",
+      "description": "Interactive suggestion chip"
+    },
+    "cardWorkflow": {
+      "code": "<Card variant='default' padding='md'><IconBadge icon={Sparkles} /><H3>Design</H3><BodySmall>Description</BodySmall></Card>",
+      "description": "Workflow step card"
+    },
+    "typographyHero": {
+      "code": "<Hero>Shape your ideas into <span className='text-transparent bg-gradient-to-r from-ink to-brand bg-clip-text'>apps that work</span>.</Hero>",
+      "description": "Hero headline with gradient text"
+    },
+    "statCardDark": {
+      "code": "<StatCard variant='dark' label='Playbooks automated' value='1,879' detail='Tax + RevOps teams' />",
+      "description": "Stat card on dark background"
+    }
+  }
+}
+
